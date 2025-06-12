@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Wavether Home {% endblock %}
+
+{% block content %}
+<div class="main-content-wrapper">
+    <h1 class="headers">Check The Weather</h1>
+    <form method="post" class="text-center">
+        {% csrf_token %}
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <input type="text" name="city1" placeholder="City, Country...">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="check-container">
+    {% if weather_data %}
+    <div class="city-container">
+        {% include 'main/city_weather.html' with weather_data=weather_data daily_forecasts=daily_forecast %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

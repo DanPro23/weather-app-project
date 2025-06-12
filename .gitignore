@@ -1,0 +1,76 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+
+# Local settings
+.env
+.env.*
+*.local
+API_KEY.txt
+
+# Django migrations
+**/migrations/
+!*/migrations/__init__.py
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+ENV.bak/
+venv.bak/
+
+# VS Code settings
+.vscode/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# macOS
+.DS_Store
+
+# PyCharm
+.idea/
+
+# Coverage and testing
+htmlcov/
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Static files (if collected)
+staticfiles/
+static/
+media/
+
+# Pip dependency files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Profiling
+.prof
+
+# Other
+*.bak
+*.swp
