@@ -7,4 +7,5 @@ data1 = {
 
 df = pd.DataFrame(data1)
 
-print(df['Name'])
+print(f"{df['Name']}\n")
+print(f"{df.head(1)}\n")

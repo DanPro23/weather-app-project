@@ -1,17 +1,19 @@
 {% if weather_data %}
-    <h2>{{ weather_data.city }}</h2>
-    <h1>{{ weather_data.temperature }}°C</h1>
-    <h4>
-        {{ weather_data.description }}
-        <img src="https:{{ weather_data.icon }}" alt="{{ weather_data.description }}">
-    </h4>
+    <div class="short-weather-info">
+        <h2>{{ weather_data.city }}</h2>
+        <h1>{{ weather_data.temperature }}°C</h1>
+        <h4>
+            {{ weather_data.description }}
+            <img src="https:{{ weather_data.icon }}" alt="{{ weather_data.description }}">
+        </h4>
+    </div>
 
 {% endif %}
 
-{% if daily_forecasts %}
-    <h2>5-Day Forecast</h2>
+{% if daily_forecast %}
+    <h2 style="font-family: 'Trebuchet MS', sans-serif;">5-Day Forecast</h2>
     <div class="forecast-container">
-        {% for forecast in daily_forecasts %}
+        {% for forecast in daily_forecast %}
             <div class="forecast">
                 <h3>{{ forecast.day }}</h3>
                 <p>{{ forecast.min_temp }}°C - {{ forecast.max_temp }}°C</p>
@@ -21,4 +23,5 @@
             </div>
         {% endfor %}
     </div>
+
 {% endif %}
