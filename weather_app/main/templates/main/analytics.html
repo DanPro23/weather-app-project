@@ -1,0 +1,40 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Wavether Analytics{% endblock %}
+
+{% block content %}
+<div style="max-width: 800px; margin: 0 auto; text-align: center;">
+
+    {% if error %}
+        <div class="error">
+            <h3>Error:</h3>
+            <p>{{ error }}</p>
+            <p>Please go back and search for a city first.</p>
+            <a href="{% url 'main' %}" style="color: blue; text-decoration: underline;">Back to Home</a>
+        </div>
+    {% else %}
+        {% if city_name %}
+            <h2 class="headers">Analytics for {{ city_name }}</h2>
+        {% else %}
+            <h2 class="headers">Weather Analytics</h2>
+        {% endif %}
+
+        <h3 class="titles" style="padding-bottom: 0.4em;">Average indicators:</h3>
+        <ul class="short-weather-info" style="list-style: none; padding: 0;">
+            <li><strong>Average max temperature:</strong> {{ summary.avg_max_temp }}°C</li>
+            <li><strong>Average min temperature:</strong> {{ summary.avg_min_temp }}°C</li>
+            <li><strong>Average humidity:</strong> {{ summary.avg_humidity }}%</li>
+        </ul>
+
+        <h3 class="titles" style="margin-top: 2em;">Temperature Chart</h3>
+        <div class="chart-container temp-chart" >
+            <canvas id="tempChart" data-city="{{ city_name }}"></canvas>
+        </div>
+    {% endif %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'main/chart_analytics.js' %}"></script>
+
+{% endblock %}
