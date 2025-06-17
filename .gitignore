@@ -54,10 +54,6 @@ coverage.xml
 *.cover
 *.py,cover
 
-# Static files (if collected)
-staticfiles/
-static/
-media/
 
 # Pip dependency files
 pip-log.txt
